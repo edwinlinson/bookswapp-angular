@@ -33,6 +33,7 @@
       </div>
     </div>
   </div> -->
+
   
 <div class="parent"> 
     <div class="container"  id="container" [ngClass]="isSignDivVisiable ? 'active' :'' ">
@@ -46,40 +47,29 @@
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your email for registeration</span>
-                <!-- <input type="text" formControlName="username" name="username"  placeholder="Userame">
-                <input type="text" formControlName="name" name="name"  placeholder="Name">
-                <input type="email" formControlName="email" name="email" placeholder="Email">
-                <input type="password" formControlName="password" name="password"   placeholder="Password">
-                <button type="submit">Sign Up</button> -->
                 <div class="form-group">
                   <input type="text" formControlName="username" name="username" placeholder="Username">
-                  <!-- Display validation messages for username -->
                   <div *ngIf="registerForm.get('username')?.errors && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched)">
                       <div *ngIf="registerForm.get('username')?.errors?.['required']">Username is required.</div>
                       <div *ngIf="registerForm.get('username')?.errors?.['pattern']">Username can only contain alphabets, dots, and underscores.</div>
                   </div>
               </div>
           
-              <!-- Name Field -->
               <div class="form-group">
                   <input type="text" formControlName="name" name="name" placeholder="Name">
-                  <!-- Display validation message for name -->
                   <div *ngIf="registerForm.get('name')?.errors && (registerForm.get('name')?.dirty || registerForm.get('name')?.touched)">
                       <div *ngIf="registerForm.get('name')?.errors?.['required']">Name is required.</div>
                   </div>
               </div>
           
-              <!-- Email Field -->
               <div class="form-group">
                   <input type="email" formControlName="email" name="email" placeholder="Email">
-                  <!-- Display validation message for email -->
                   <div *ngIf="registerForm.get('email')?.errors && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)">
                       <div *ngIf="registerForm.get('email')?.errors?.['required']">Email is required.</div>
                       <div *ngIf="registerForm.get('email')?.errors?.['email']">Invalid email format.</div>
                   </div>
               </div>
           
-              <!-- Password Field -->
               <div class="form-group">
                   <input type="password" formControlName="password" name="password" placeholder="Password">
                   <div *ngIf="registerForm.get('password')?.errors && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)">
@@ -102,13 +92,6 @@
         <div class="form-container sign-in" >
             <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
                 <h1>Sign In</h1>
-                <!-- <div class="social-icons">
-                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-                <span>or use your email password</span> -->
                 <input type="username" formControlName="username" name="username"  placeholder="Username">
                 <input type="password" formControlName="password" name="password"  placeholder="Password">
                 <a [routerLink]="['/forgot-password']">→ Forgot Your Password? ←</a>
